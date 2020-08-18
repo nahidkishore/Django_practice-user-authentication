@@ -17,6 +17,13 @@
       <li class="nav-item active">
         <a class="nav-link" href="{% url 'Login_app:index' %}">Home</a>
       </li>
+      {% if user.is_authenticated %}
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'Login_app:logout' %}">LogOut</a>
+        
+      </li>
+      {% else %}
+     
       <li class="nav-item">
         <a class="nav-link" href="{% url 'Login_app:register' %}">Register</a>
         
@@ -25,10 +32,7 @@
         <a class="nav-link" href="{% url 'Login_app:login' %}">Login</a>
         
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'Login_app:logout' %}">LogOut</a>
-        
-      </li>
+    {% endif %}
 
    
     </ul>
